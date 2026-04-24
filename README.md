@@ -11,6 +11,8 @@ Le projet couvre la fin de la pipeline vue dans l'UE :
 - ajout d'effets temps reel : fumee, bloom, neons, lumiere chimique
 - ajout d'une ambiance sonore interactive
 
+https://github.com/user-attachments/assets/63510e0e-d7f4-4de2-9751-b8ec99f8515f
+
 ## Installation
 
 ```bash
