@@ -18,7 +18,7 @@ Le travail ne se limite pas a la composition Three.js finale. La scene repose su
 2. Construction de la forme generale du poulpe-banane et travail du mesh.
 3. Depliage UV pour permettre l'application correcte des textures.
 4. Mise en place des textures et des materiaux via les UV maps.
-5. Animation du personnage dans Blender, puis export du modele anime.
+5. Animation du poulpe dans Blender, puis export du modele anime.
 6. Composition de la scene dans Three.js Editor avec les autres elements du laboratoire.
 7. Export de la scene en JSON puis reprise en local dans un projet Three.js / Vite.
 8. Ajout en code de la camera finale, du bloom, des neons, de la fumee, de la lumiere d'ambiance et de l'audio.
