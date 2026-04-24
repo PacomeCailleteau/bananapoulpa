@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>banapoulpa</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #111;
+      color: #f3f3f3;
+      font-family: Arial, sans-serif;
+    }
+
+    .hud {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      padding: 8px 10px;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.35;
+      max-width: 520px;
+    }
+
+    .camera-tools {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      width: min(420px, calc(100vw - 24px));
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.58);
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.35;
+      box-sizing: border-box;
+    }
+
+    .camera-tools p {
+      margin: 0 0 8px;
+    }
+
+    .camera-tools .actions {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .camera-tools button {
+      border: 0;
+      border-radius: 6px;
+      padding: 8px 10px;
+      background: #f3f3f3;
+      color: #111;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .camera-tools pre {
+      margin: 0;
+      padding: 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #d9f7ff;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 40vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="hud" id="hud">Chargement du JSON de l editeur...</div>
+  <div class="camera-tools">
+    <p>Place la camera librement avec la souris, puis capture les valeurs.</p>
+    <div class="actions">
+      <button id="capture-camera" type="button">Capturer camera</button>
+      <button id="copy-camera" type="button">Copier</button>
+      <button id="toggle-audio" type="button">Activer audio</button>
+    </div>
+    <pre id="camera-output">Aucune capture pour le moment.</pre>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
