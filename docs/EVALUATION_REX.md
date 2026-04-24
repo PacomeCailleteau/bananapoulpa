@@ -66,7 +66,7 @@ La scène finale a d'abord été composée dans Three.js Editor :
 - placement de la caméra
 
 Ensuite, la scène a été exportée en JSON et reprise dans le projet local pour aller plus loin :
-- remplacement du modèle statique par `bananapoulpa.glb`
+- remplacement du modèle statique par `bananapoulpa.glb` pour conserver l'animation
 - réglage du cadrage caméra
 - ajout de fumée sur les éléments chimiques
 - ajout d'une ambiance lumineuse verte
