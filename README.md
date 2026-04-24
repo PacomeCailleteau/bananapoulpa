@@ -1,17 +1,15 @@
 # banapoulpa
 
-Projet final GFX réalisé avec Three.js autour d'une scène de laboratoire mettant en scène `bananapoulpa`.
+Projet final GFX realise avec Three.js autour d'une scene de laboratoire mettant en scene `bananapoulpa`.
 
-## Aperçu
+## Apercu
 
-Le projet inclut :
-- chargement d'une composition de scène exportée en JSON
-- remplacement du modèle statique par un GLB animé
-- caméra finalisée pour la présentation
-- ambiance chimique avec fumée, bloom, néons et éclairages localisés
-- audio d'ambiance activable dans la scène
-
-https://github.com/user-attachments/assets/55c14364-bc5b-4818-a660-f5432ba71e4a
+Le projet couvre la fin de la pipeline vue dans l'UE :
+- integration d'un modele 3D anime dans une scene temps reel
+- chargement d'une composition exportee depuis Three.js Editor
+- reglage de la camera et de l'ambiance visuelle
+- ajout d'effets temps reel : fumee, bloom, neons, lumiere chimique
+- ajout d'une ambiance sonore interactive
 
 ## Installation
 
@@ -27,7 +25,7 @@ npm run build
 npm run preview
 ```
 
-## Lancer la scène
+## Lancer la scene
 
 ```bash
 npm run dev
@@ -35,15 +33,15 @@ npm run dev
 
 Puis ouvrir `http://localhost:5173/`.
 
-## Structure du dépôt
+## Structure du depot
 
-- `index.html` : point d'entrée Vite
-- `src/main.js` : logique Three.js de la scène
-- `public/assets/banapoulpa/` : assets principaux (`scene.json`, `bananapoulpa.glb`)
-- `docs/` : documents de rendu et rex
-- `bananapoulpa.mp4` : capture vidéo du projet
+- `index.html` : point d'entree Vite
+- `src/main.js` : logique Three.js de la scene
+- `public/assets/banapoulpa/` : export JSON de scene et modele anime
+- `docs/` : rendu Seance 4 et rex d'evaluation
+- `bananapoulpa.mp4` : video de presentation
 
 ## Documentation
 
-- rendu Séance 4 : [docs/SEANCE4_RENDU.md](C:/Users/pacom/Documents/Cours/IMT_Atlantique/Cours/A2/Gfx/TP/docs/SEANCE4_RENDU.md)
-- rex d'évaluation : [docs/EVALUATION_REX.md](C:/Users/pacom/Documents/Cours/IMT_Atlantique/Cours/A2/Gfx/TP/docs/EVALUATION_REX.md)
+- rendu Seance 4 : [docs/SEANCE4_RENDU.md](C:/Users/pacom/Documents/Cours/IMT_Atlantique/Cours/A2/Gfx/TP/docs/SEANCE4_RENDU.md)
+- rex d'evaluation : [docs/EVALUATION_REX.md](C:/Users/pacom/Documents/Cours/IMT_Atlantique/Cours/A2/Gfx/TP/docs/EVALUATION_REX.md)

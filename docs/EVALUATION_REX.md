@@ -1,67 +1,120 @@
 # Evaluation - Rex banapoulpa
 
-## Sujet
+## Contexte du projet
 
-Réalisation d'un projet fil rouge autour d'un poulpe 3D animé, intégré dans une composition Three.js.
+Le projet fil rouge de l'UE consistait a concevoir un poulpe 3D, a le texturer, a l'animer puis a l'integrer dans une scene temps reel.
 
-## Objectif
+Dans mon cas, j'ai suivi une progression complete :
+- modelisation dans Blender en m'appuyant sur le tutoriel donne pendant l'UE
+- construction du mesh du personnage
+- travail des UV pour preparer les textures
+- ajout des textures et des materiaux
+- animation du personnage
+- integration dans Three.js Editor
+- reprise en local dans un projet Three.js avec des effets et une ambiance plus pousses
 
-Passer d'un modèle 3D à une scène temps réel présentable, avec animation, matériaux, ambiance visuelle, composition et rendu final.
+## Technologies utilisees
 
-## Ce qui a été réalisé
+- Blender pour la modelisation, les UV, les materiaux de base et l'animation
+- export du modele anime en GLB pour l'integration web
+- Three.js Editor pour la composition initiale de la scene
+- export JSON de la scene pour recuperer la composition dans le projet
+- Three.js cote code pour le chargement, la camera, les lumieres, l'animation et les effets
+- Vite pour le projet local et le build
+- Git et GitHub pour versionner et rendre le projet
 
-- intégration de la scène de laboratoire exportée en JSON
-- remplacement de l'objet statique par `bananapoulpa.glb`
-- lecture automatique des animations du GLB
-- réglage du cadrage caméra pour la scène finale
-- ajout d'une ambiance chimique avec fumée verte et éclairages localisés
-- ajout d'un bloom léger pour renforcer les sources lumineuses
-- ajout de néons visibles avec clignotement
-- ajout d'une ambiance sonore procédurale
-- amélioration de certains matériaux : verre, produits chimiques, lecture générale de la scène
+## Pourquoi ces choix
 
-## Choix techniques
+Blender etait l'outil naturel pour la partie modelisation / UV / animation. Three.js Editor a permis de composer rapidement une premiere scene avec les differents objets du laboratoire. Ensuite, le passage en code local etait necessaire pour aller plus loin que l'editeur et ajouter des comportements plus precis :
+- remplacement du modele statique par le GLB anime
+- reglage fin de la camera
+- effets visuels temps reel
+- logique d'animation complementaire
+- ajout de l'audio
 
-- moteur : Three.js
-- bundler : Vite
-- chargement de scène : `THREE.ObjectLoader` sur export JSON
-- chargement du modèle animé : `GLTFLoader`
-- animation : `AnimationMixer`
-- post-process : `EffectComposer` + `UnrealBloomPass`
-- ambiance particulaire : système de fumée procédural en `Points`
-- audio : Web Audio API
+## Ce qui a ete realise
 
-## Difficultés rencontrées
+### 1. Modelisation
 
-- cadrage initial incorrect à cause de la caméra locale qui ne correspondait pas à la scène exportée
-- animations non visibles car il fallait les relire au bon niveau dans les objets exportés
-- remplacement du modèle statique par le GLB animé tout en conservant sa transformation dans la scène
-- réglage fin des lumières pour obtenir une ambiance crédible sans brûler les flacons ou les béchers
-- nécessité d'un son interactif car les navigateurs bloquent l'autoplay audio
+Le personnage a ete modelise dans Blender en suivant le tutoriel de cours comme base de methode. Cela m'a permis de mettre en pratique :
+- la construction d'un mesh coherent
+- les proportions du personnage
+- la logique de hierarchie utile pour l'animation
 
-## Ce qui fonctionne bien
+### 2. Rendering
 
-- la lecture de l'animation principale
-- le cadrage de présentation
-- l'ambiance générale du laboratoire
-- la cohérence entre néons, bloom, fumée et son
-- l'usage de Three.js pour composer rapidement une scène finale interactive
+La partie rendu a consiste a preparer le personnage pour un usage temps reel :
+- depliage UV
+- placement des textures a partir des UV maps
+- reglage des materiaux
+- export du modele avec ses materiaux vers un format compatible web
 
-## Limites actuelles
+### 3. Animation
 
-- l'audio est procédural et non basé sur des enregistrements réels
-- les robots ont une animation simple de scène, pas une vraie locomotion riggée
-- certains matériaux organiques restent approximés par retouche runtime plutôt que retravaillés à la source
+Le personnage a ete anime dans Blender, puis exporte. Dans la scene web, l'animation du GLB est relue en boucle avec `AnimationMixer`.
 
-## Pistes d'amélioration
+### 4. Composition / scene 3D
 
-- utiliser des samples audio réels de laboratoire
-- retravailler les matériaux directement dans Blender ou dans le GLB source
-- ajouter une logique interactive aux robots ou aux éléments chimiques
-- améliorer encore les ombres de contact et les matériaux organiques
+La scene finale a d'abord ete composee dans Three.js Editor avec le decor de laboratoire, puis exportee en JSON. Ensuite, j'ai repris cette scene dans le projet local pour aller plus loin :
+- remplacement du modele statique par `bananapoulpa.glb`
+- reglage du cadrage camera
+- ajout de fumee sur les elements chimiques
+- ajout d'une ambiance lumineuse verte
+- ajout de neons visibles avec clignotement
+- ajout d'un bloom leger
+- ajout d'un son d'ambiance
+- ajustements de materiaux comme le verre et certaines surfaces organiques
 
-## Supports d'évaluation
+## Ecueils du projet
 
-- code source du projet
-- scène finale Three.js accessible depuis la racine du projet
-- vidéo `bananapoulpa.mp4`
+Plusieurs difficultes sont apparues pendant le projet :
+- la camera initiale ne regardait pas correctement la scene exportee
+- les animations n'etaient pas lues au bon niveau dans les objets charges
+- le remplacement du modele statique par le GLB anime demandait de conserver exactement la transformation dans la scene
+- certains reglages de lumiere rendaient les flacons et bechers trop lumineux
+- les navigateurs imposent des contraintes sur l'audio, donc il a fallu passer par une activation utilisateur
+- le fichier JSON de scene etait tres volumineux et a du etre stocke via Git LFS
+
+## Ce qui a bien fonctionne
+
+- la continuite de la pipeline Blender -> export -> Three.js
+- l'integration du GLB anime dans une scene deja composee
+- le rendu d'ambiance final, plus riche que la scene brute de depart
+- la coherence globale entre camera, lumiere, fumee, bloom, neons et son
+- l'usage combine de Three.js Editor pour prototyper puis du code local pour raffiner
+
+## Ce qui a moins bien fonctionne
+
+- certains materiaux organiques du personnage restent moins convaincants que souhaite
+- l'animation des robots du decor reste simplifiee
+- l'audio ajoute est procedural et non issu de veritables samples
+- le JSON de scene est tres lourd, ce qui n'est pas ideal pour une diffusion web legere
+
+## Analyse critique
+
+Le projet montre bien l'interet d'une pipeline mixte : Blender pour produire l'objet 3D et Three.js pour la composition finale temps reel. Le principal point fort est l'integration progressive des outils vus en cours dans un resultat coherent. Le principal point faible reste la finition de certains materiaux et le poids des assets.
+
+## Si je recommencais
+
+Si je reprenais le projet depuis le debut, je :
+- preparerais plus tot une convention de nommage des objets et materiaux
+- optimiserais davantage les exports et le poids de la scene
+- travaillerais plus directement certains materiaux dans Blender avant export
+- preparerais des rendus intermediaires plus tot pour valider camera et ambiance
+
+## Pistes d'amelioration
+
+- utiliser de vrais samples audio de laboratoire
+- optimiser ou decouper la scene pour reduire le poids du JSON
+- ameliorer les materiaux organiques du personnage a la source
+- enrichir le comportement des autres elements animes du decor
+- ajouter plus d'interactions dans la scene web
+
+## Suite du projet
+
+Ce projet peut servir de base de portfolio car il montre :
+- une chaine de production 3D complete
+- une integration web temps reel
+- une capacite a passer d'un outil auteur a une scene programmee
+
+Le depot Git et la video permettent de presenter a la fois le resultat final et la demarche technique.
