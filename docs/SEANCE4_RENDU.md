@@ -1,44 +1,47 @@
-# Rendu Seance 4
+# Rendu Séance 4
 
 ## Objet du rendu
 
-Le rendu de Seance 4 correspond a la composition finale du projet dans Three.js.
+Le rendu de Séance 4 correspond à la composition finale du projet dans Three.js.
 
-L'objectif est de montrer l'integration complete du modele dans un moteur temps reel web :
-- chargement de la scene
-- animation du personnage principal
-- mise en scene dans un decor
+L'objectif est de montrer l'intégration complète du poulpe dans un moteur temps réel web :
+- chargement de la scène
+- animation du poulpe
+- mise en scène dans un décor
 - ambiance visuelle et sonore
 
-## Ce qui a ete fait dans l'UE
+## Ce qui a été réalisé dans l'UE
 
-Le travail ne se limite pas a la composition Three.js finale. La scene repose sur tout le pipeline construit pendant l'UE :
+Le travail ne se limite pas à la composition Three.js finale. La scène repose sur tout le pipeline construit pendant l'UE :
 
-1. Modelisation du personnage dans Blender en s'appuyant sur le tutoriel propose en cours.
-2. Construction de la forme generale du poulpe-banane et travail du mesh.
-3. Depliage UV pour permettre l'application correcte des textures.
-4. Mise en place des textures et des materiaux via les UV maps.
-5. Animation du poulpe dans Blender, puis export du modele anime.
-6. Composition de la scene dans Three.js Editor avec les autres elements du laboratoire.
-7. Export de la scene en JSON puis reprise en local dans un projet Three.js / Vite.
-8. Ajout en code de la camera finale, du bloom, des neons, de la fumee, de la lumiere d'ambiance et de l'audio.
+1. Modélisation du poulpe dans Blender en s'appuyant sur le tutoriel proposé en cours.
+2. Mise en place des bones avant la modélisation complète pour anticiper les animations et les mouvements.
+3. Construction de la forme générale du poulpe-banane et travail du mesh.
+4. Dépliage UV à plat pour permettre l'application correcte des textures.
+5. Génération des textures à partir des UV avec le modèle d'IA Nano Banana 2.
+6. Retouches dans Blender avec l'outil de smear pour lisser les textures et corriger les imperfections.
+7. Animation du poulpe dans Blender, puis export du modèle animé.
+8. Composition de la scène dans Three.js Editor en important `laboratoire.glb` ainsi que d'autres objets comme les bidons nucléaires et les petits robots.
+9. Placement de plusieurs lumières et de la caméra directement dans Three.js Editor.
+10. Export de la scène en JSON puis reprise en local dans un projet Three.js / Vite.
+11. Ajout en code de la caméra finale, du bloom, des néons, de la fumée, de la lumière d'ambiance et de l'audio.
 
-## Livrables associes
+## Livrables associés
 
 - code source du projet Three.js
-- `public/assets/banapoulpa/scene.json`
-- `public/assets/banapoulpa/bananapoulpa.glb`
-- video `bananapoulpa.mp4`
-- depot Git : `https://github.com/PacomeCailleteau/bananapoulpa`
+- `public/assets/bananapoulpa/scene.json`
+- `public/assets/bananapoulpa/bananapoulpa.glb`
+- vidéo `bananapoulpa.mp4`
+- dépôt Git : `https://github.com/PacomeCailleteau/bananapoulpa`
 
-## Fonctionnalites integrees dans la scene finale
+## Fonctionnalités intégrées dans la scène finale
 
-- chargement de la scene depuis l'export JSON
-- remplacement du modele statique par le GLB anime
+- chargement de la scène depuis l'export JSON
+- remplacement du modèle statique par le GLB animé
 - lecture en boucle de l'animation
-- camera finale reglee pour la presentation
-- ambiance de laboratoire avec fumee, bloom, lumieres chimiques et neons
-- audio d'ambiance activable dans la scene
+- caméra finale réglée pour la présentation
+- ambiance de laboratoire avec fumée, bloom, lumières chimiques et néons
+- audio d'ambiance activable dans la scène
 
 ## Lancement local
 
@@ -48,18 +51,3 @@ npm run dev
 ```
 
 Puis ouvrir `http://localhost:5173/`.
-
-## Format de rendu conseille
-
-Oui, un petit `.zip` contenant un `README.md` propre avec :
-- le lien du depot Git
-- le lien eventuel de la video
-- une phrase claire sur le contenu rendu
-
-peut suffire si l'enseignant accepte un rendu par lien Git.
-
-Pour rester prudent, le plus propre est un zip minimal avec :
-- `README.md`
-- lien du repo
-- lien ou nom de la video
-- une phrase indiquant que les documents de rendu sont deja presents dans `docs/`
