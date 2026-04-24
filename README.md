@@ -11,6 +11,8 @@ Le projet inclut :
 - ambiance chimique avec fumée, bloom, néons et éclairages localisés
 - audio d'ambiance activable dans la scène
 
+https://github.com/user-attachments/assets/55c14364-bc5b-4818-a660-f5432ba71e4a
+
 ## Installation
 
 ```bash
